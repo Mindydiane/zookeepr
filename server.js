@@ -3,6 +3,9 @@ const express = require('express');
 // creats a route that the front-end can request data from
 const { animals } = require('./data/animals');
 
+//tell our app to use that port, if it has been set, and if not, default to port 80
+const Port = process.env.PORT || 3001;
+
 //second step inquiring express
 const app = express();
 
@@ -54,6 +57,6 @@ app.get('/api/animals', (req, res) => {
     res.json(results); 
 });
 // listen for port 3001
-app.listen(3001, () => { 
-    console.log('API server now on port 3001')
+app.listen(PORT, () => { 
+    console.log('API server now on port ${PORT}!');
 });
