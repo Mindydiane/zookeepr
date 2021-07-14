@@ -1,6 +1,6 @@
 // inquiring express 1st step
 const express = require('express');
-// creats a route that the front-end can request data from
+// creates a route that the front-end can request data from
 const { animals } = require('./data/animals');
 
 //tell our app to use that port, if it has been set, and if not, default to port 80
@@ -56,7 +56,14 @@ app.get('/api/animals', (req, res) => {
    }
     res.json(results); 
 });
-// listen for port 3001
+
+//get a new route for animals
+app.get('/api/animals/:id', (req, res) => {
+  const results = findById(req.params.id, animals);
+ res.json(result); 
+});
+
+// listen for port 
 app.listen(PORT, () => { 
     console.log('API server now on port ${PORT}!');
 });
