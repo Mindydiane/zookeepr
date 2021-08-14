@@ -25,8 +25,8 @@ app.use(express.json());
 
 //tells server when /api is used get it from apiRoutes
 app.use('/api', apiRoutes);
-//tells server when / is used get it from htmlRoutes
 app.use('/', htmlRoutes);
+//tells server when / is used get it from htmlRoutes
 
 app.listen(PORT, () => {
   console.log(`API server now on port ${PORT}!`);
