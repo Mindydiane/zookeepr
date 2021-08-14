@@ -129,6 +129,15 @@
         "goofy"
       ],
       "id": "12"
+    },
+    {
+      "name": "mister",
+      "species": "snake",
+      "diet": "herbivore",
+      "personalityTraits": [
+        "anxious"
+      ],
+      "id": "13"
     }
   ]
 }
