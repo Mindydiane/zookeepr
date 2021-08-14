@@ -1,3 +1,6 @@
+const apiRoutes = require('./routes/apiRoutes');
+const htmlRoutes = require('./routes/htmlRoutes');
+
 //import and use fs library to write data to animals.json
 const fs = require('fs');
 //built into the Node.js API that provides utilities for working with file and directory paths especially w/Heroku
@@ -19,6 +22,11 @@ app.use(express.static('public'));
 app.use(express.urlencoded({ extended: true }));
 // parse incoming JSON data
 app.use(express.json());
+
+//tells server when /api is used get it from apiRoutes
+app.use('/api', apiRoutes);
+//tells server when / is used get it from htmlRoutes
+app.use('/', htmlRoutes);
 
 app.listen(PORT, () => {
   console.log(`API server now on port ${PORT}!`);
